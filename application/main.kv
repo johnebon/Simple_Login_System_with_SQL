@@ -1,0 +1,114 @@
+#:kivy 2.1.0
+<FirstScreen>:
+    BoxLayout: 
+        orientation: 'vertical' 
+        spacing: 1 
+        padding: 1
+
+        TextInput:
+            multiline: False 
+            font_size: 20
+            background_color: 64/255, 64/255, 64/255, 1
+            background_normal: '' 
+            foreground_color: 30/255, 144/255, 255/255, 1
+            id: input_usr
+            padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+    
+        TextInput:
+            multiline: False 
+            font_size: 20
+            background_color: 64/255, 64/255, 64/255, 1
+            background_normal: '' 
+            foreground_color: 30/255, 144/255, 255/255, 1
+            id: input_pwd
+            padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
+            
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 1
+            padding: 0
+
+            Button:
+                text: 'Sign In'
+                font_size: 18
+                on_press: root.login()
+                background_color: [.25, .25, .25, 1] 
+                background_normal: ''
+                color: [30/255, 144/255, 255/255, 1]
+
+            Button:
+                text: 'Sign Up'
+                font_size: 18
+                on_press: root.register()
+                background_color: [.25, .25, .25, 1] 
+                background_normal: ''
+                color: [30/255, 144/255, 255/255, 1]
+
+<SignedIn>:
+    canvas.before:
+        Color:
+            rgba: .25, .25, .25, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 1
+        padding: 1
+        Label:
+            text: 'You signed in!'
+            color: [30/255, 144/255, 255/255, 1]
+            font_size: 18
+        Button:
+            text: 'Back'
+            font_size: 18
+            on_press: root.back()
+            color: [30/255, 144/255, 255/255, 1]
+            background_color: [.25, .25, .25, 1] 
+            background_normal: ''
+
+<SignedUp>:
+    canvas.before:
+        Color:
+            rgba: .25, .25, .25, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 1
+        padding: 1
+        Label:
+            text: 'You signed up!'
+            color: [30/255, 144/255, 255/255, 1]
+            font_size: 18
+        Button:
+            text: 'Back'
+            font_size: 18
+            on_press: root.back()
+            color: [30/255, 144/255, 255/255, 1]
+            background_color: [.25, .25, .25, 1] 
+            background_normal: ''
+
+<Error>:
+    canvas.before:
+        Color:
+            rgba: .25, .25, .25, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 1
+        padding: 1
+        Label:
+            text: 'Error!'
+            color: [30/255, 144/255, 255/255, 1]
+            font_size: 18
+        Button:
+            text: 'Back'
+            font_size: 18
+            on_press: root.back()
+            color: [30/255, 144/255, 255/255, 1]
+            background_color: [.25, .25, .25, 1] 
+            background_normal: ''
